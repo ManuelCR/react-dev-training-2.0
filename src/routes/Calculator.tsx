@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 
 import { Button } from "semantic-ui-react";
 import { useState } from 'react'; //Por que es algo que va a cambiar
@@ -15,9 +16,11 @@ export const Calculator = () => {
     setResult((prevResult) => {return  eval(prevResult)});
   }
 
+  const transformedArray = _.pull(['a', 'b', 'c', 'a', 'b', 'c'], 'a', 'c')
+
   return (
     <>
-
+      {transformedArray}
       <div>
         <input type="text" value={result} />
       </div>
